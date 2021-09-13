@@ -1,7 +1,7 @@
 node {
     stage("clean") {
-        cleanWs()   // requires workspace cleanup plugin to be installed
-        checkout scm
+        //cleanWs()   // requires workspace cleanup plugin to be installed
+        //checkout scm
     }
     
     stage('get config file') {
