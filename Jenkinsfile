@@ -1,3 +1,13 @@
+
+
+properties([
+    parameters([
+        fileParam(name: 'testplan.jmx'),
+        fileParam(name: 'users.csv'),
+    ])
+])    
+// <hudson.model.FileParameterDefinition>
+
 node {
     stage("clean") {
         //cleanWs()   // requires workspace cleanup plugin to be installed
