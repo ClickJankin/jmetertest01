@@ -1,4 +1,7 @@
-
+def JOBID='RunBztJmeter'
+/*
+  Remeber remove users, : click-ap.com/jenkins2020/jmeter
+*/
 
 properties([
     parameters([
@@ -28,10 +31,16 @@ node {
     }
     
     stage('get config file') {
+        unstash 'testplan.jmx'
+        unstash 'users.csv'
             // sh "wget https://raw.githubusercontent.com/Blazemeter/taurus/master/examples/jmeter/stepping.yml"
     }
     
     stage("run test") {
-        bzt "${workspace}/existing_jmeter_script.yml"
+        //bzt "${workspace}/existing_jmeter_script.yml"
+        unstash 'existing_jmeter_script'
+        withFileParameter('existing_jmeter_script') {
+            bzt "$existing_jmeter_script"
+        }
     }
 }
