@@ -8,6 +8,7 @@ properties([
         stashedFile(name: 'testplan.jmx'),
         stashedFile(name: 'users.csv'),
         booleanParam(name: 'doClean', defaultValue: true, description: 'Clean Ws'),
+        stashedFile(name: 'existing_jmeter_script')
     ])
 ])    
 // <hudson.model.FileParameterDefinition>
