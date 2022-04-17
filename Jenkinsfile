@@ -5,8 +5,8 @@ def JOBID='RunBztJmeter'
 
 properties([
     parameters([
-        fileParam(name: 'testplan.jmx'),
-        fileParam(name: 'users.csv'),
+        stashedFile(name: 'testplan.jmx'),
+        stashedFile(name: 'users.csv'),
         booleanParam(name: 'doClean', defaultValue: true, description: 'Clean Ws'),
     ])
 ])    
